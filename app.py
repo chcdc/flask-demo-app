@@ -1,6 +1,8 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-        return "It's working!\n"
+    ip_address = request.remote_addr
+    host = request.host
+    return "It's working!\nYour are " + ip_address + "\nI'm " + host + "\n"
