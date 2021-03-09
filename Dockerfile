@@ -1,5 +1,5 @@
 # python:alpine is 3.{latest}
-FROM python:alpine 
+FROM python:3.9-alpine
 
 LABEL maintainer="Carlos Carvalho"
 
