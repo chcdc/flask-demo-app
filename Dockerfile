@@ -1,4 +1,4 @@
-# python:alpine is 3.{latest}
+FROM python:3.8.16-slim-bullseye
 FROM python:3.9-alpine
 
 LABEL maintainer="Carlos Carvalho"
