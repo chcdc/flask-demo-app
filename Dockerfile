@@ -1,8 +1,8 @@
 FROM python:3.8.16-slim-bullseye
 FROM python:3.9-alpine
 
-LABEL maintainer="Carlos Carvalho"
-
+LABEL maintainer="Carlos Carvalho <carlos@chcdc.com.br>"
+LABEL version="1.1"
 RUN pip install flask
 
 COPY app.py /src/
