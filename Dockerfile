@@ -5,10 +5,10 @@ LABEL maintainer="Carlos Carvalho <carlos@chcdc.com.br>"
 LABEL version="1.1"
 RUN pip install flask
 
-COPY app.py /src/
+COPY main.py /app/
+COPY entrypoint.sh /app/
 
-EXPOSE 5000
+ENV PORT=5000
+EXPOSE ${PORT}
 
-ENV FLASK_APP=/src/app.py
-
-ENTRYPOINT ["flask","run","--host=0.0.0.0"]
+ENTRYPOINT ["/bin/sh","/app/entrypoint.sh"]
