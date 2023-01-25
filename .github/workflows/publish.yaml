@@ -1,12 +1,13 @@
 name: Publish Docker image
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
   push_to_registry:
-    if: github.ref_type == tag
+    if: github.ref_type == tag && startsWith(github.ref_name, 'v*')
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     environment: Secrets
@@ -24,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: chcdc/flask-demo-app
+          images: github.repository_owner/flask-demo-app
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
