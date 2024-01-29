@@ -7,7 +7,7 @@ on:
 
 jobs:
   push_to_registry:
-    if: github.ref_type == tag
+    # if: github.ref_type == tag
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     environment: Secrets
