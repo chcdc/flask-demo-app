@@ -1,7 +1,7 @@
-FROM python:3.10-slim-bullseye
+FROM python:3-alpine
 
 LABEL maintainer="Carlos Carvalho <carlos@chcdc.com.br>"
-LABEL version="1.2"
+LABEL version="1.3"
 RUN pip install flask
 
 COPY main.py /app/
