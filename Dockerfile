@@ -1,7 +1,7 @@
 FROM python:3-alpine
 
 LABEL maintainer="Carlos Carvalho <carlos@chcdc.com.br>"
-LABEL version="1.3"
+LABEL version="2.0"
 RUN pip install flask
 
 COPY main.py /app/
